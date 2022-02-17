@@ -11,3 +11,68 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+body{
+  background-color:azure;
+}
+
+
+
+
+/* About us Page CSS Starts here                  Created by Sanket --BT19CSE032  */
+.Header{
+  display:flex;
+  margin-top: 10px;
+  font-size: large;
+  /* border-bottom: 2px solid black; */
+  padding-bottom: 10px;
+  
+}
+.software_name{
+  width: 60%;
+  display: flex;
+  padding-left: 30px;
+  font-size: xx-large;
+  align-items: flex-end;
+  
+}
+.login_signup_etc{
+  display:flex;
+  width: 40%;
+  justify-content: space-evenly;
+  align-items: flex-end;
+}
+.login_signup{
+  color: black;
+  text-decoration: none;
+}
+
+.Aboutus{
+  display: flex;
+  flex-direction: column;
+  padding-left: 30px;
+  padding-top: 100px;
+  /* justify-content: center; */
+  height: 400px;
+  /* border: 2px solid black; */
+}
+
+.Aboutus_1{
+  font-size: xx-large;
+}
+.Features{
+  padding-top: 10px;
+}
+.Footer{
+  padding-left: 30px;
+  font-size: xx-large;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  background-color: white;
+
+}  
+.contactus_1{
+  font-size:medium;
+}
+/*About Us Page CSS ends here                  Created by Sanket --BT19CSE032  */
