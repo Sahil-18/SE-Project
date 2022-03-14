@@ -1,5 +1,4 @@
 const jwt = require('jsonwebtoken')
-const { models } = require('mongoose')
 
 // Authentication middleware
 const auth = (req, res, next) => {
@@ -15,7 +14,7 @@ const auth = (req, res, next) => {
 			console.error(err);
 			return res.status(403).send("Session expired");
 		}
-		req.currentUserName = user.name;
+		req.currentEmail = user.email;
 		next();
 	})
 };

@@ -1,21 +1,21 @@
-require('dotenv').config()
+require('dotenv').config();
+const express = require('express');
+const app = express();
+const mongoose = require('mongoose');
+const cors = require('cors');
+const PORT = process.env.PORT || 8000;
 
-const express = require('express')
-const app = express()
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({extended : true}));
 
-const cors = require('cors')
-app.use(cors())
+mongoose.connect(process.env.DATABASE_URL,{ useNewUrlParser : true });
+const db = mongoose.connection;
+db.on('error',(error)=>console.error(error));
+db.once('open',()=>console.log('Connected to Database'));
 
-const mongoose = require('mongoose')
-mongoose.connect(process.env.DATABASE_URL,{ useNewUrlParser : true })
+const Login_router = require("./routes/Login.js");
 
-const db = mongoose.connection
-db.on('error',(error)=>console.error(error))
-db.once('open',()=>console.log('Connected to Database'))
+app.use("/api",Login_router);
 
-// for json
-app.use(express.json())
-
-// app.use('/api/auth',require('./routes/api/auth'))  -- points to the relevant api
-
-app.listen(8000,()=>console.log('Server Started'))
+app.listen(PORT,()=>console.log('Server Started'));
